@@ -1,0 +1,30 @@
+{
+  "name": "poncheau_server",
+  "version": "1.0.0",
+  "description": "Botnet thinger",
+  "main": "index.js",
+  "scripts": {
+    "test": "node ."
+  },
+  "type": "module", 
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/p0syd0n/poncheau_server"
+  },
+  "keywords": [
+    "botnet",
+    "code",
+    "javascript",
+    "C"
+  ],
+  "author": "posydon",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/p0syd0n/poncheau_server/issues"
+  },
+  "homepage": "https://github.com/p0syd0n/poncheau_server#readme",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "socket.io": "^4.7.5"
+  }
+}
