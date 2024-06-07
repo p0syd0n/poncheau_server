@@ -122,7 +122,11 @@ async function main() {
 				}
 				break;
 			case 'EXIT':
-				console.log('Tf you mean exit youre in the main fucking menu');
+				for (let client of clients) {
+					client.socketObject.write('exit|{}');	
+				}
+				process.exit(0);
+				break;
 
 		}
 	}
@@ -163,3 +167,12 @@ const server = net.createServer((socket) => {
 server.listen(port, () => {
     main()
 });
+
+process.on('SIGINT', () => {
+	console.log(chalk.red.bold('\n\nReceived SIGINT. Performing cleanup. \n Please note that the "EXIT" command is provided for a more elegant approach.'));
+	for (let client of clients) {
+		client.socketObject.write('exit|{}');	
+	}
+	process.exit(0);
+});
+
